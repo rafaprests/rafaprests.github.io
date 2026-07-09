@@ -134,6 +134,30 @@
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   /* -----------------------------------------------------------------------
+   * Contador de visitas (Abacus — abacus.jasoncameron.dev, grátis e com CORS)
+   * Conta 1 por sessão do navegador: refreshes na mesma aba só leem o total,
+   * sem inflar. Se a API falhar, mostra "—" e não quebra nada.
+   * --------------------------------------------------------------------- */
+  (function visitorCounter() {
+    const el = document.getElementById("hitcount");
+    if (!el) return;
+
+    const BASE = "https://abacus.jasoncameron.dev";
+    const NS = "rafaprests-github-io", KEY = "home";
+    const firstThisSession = !sessionStorage.getItem("visited");
+    const url = `${BASE}/${firstThisSession ? "hit" : "get"}/${NS}/${KEY}`;
+
+    fetch(url)
+      .then((r) => r.json())
+      .then((data) => {
+        if (typeof data.value !== "number") throw new Error("resposta inesperada");
+        if (firstThisSession) sessionStorage.setItem("visited", "1");
+        el.textContent = String(data.value).padStart(6, "0"); // odômetro retrô
+      })
+      .catch(() => { el.textContent = "—"; });
+  })();
+
+  /* -----------------------------------------------------------------------
    * Um oi discreto no console pra quem for dev
    * --------------------------------------------------------------------- */
   console.log(
