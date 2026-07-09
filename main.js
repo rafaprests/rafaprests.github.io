@@ -7,7 +7,7 @@
   /* -----------------------------------------------------------------------
    * CONFIG — placeholders para o Rafael preencher
    * --------------------------------------------------------------------- */
-  const CV_URL       = "https://docs.google.com/document/d/141HRthqUsSmXq3aMjyDHlaMzlDMhus-b/edit?usp=sharing&ouid=114828948792713014646&rtpof=true&sd=true"; // ex.: link de download do Google Drive
+  const CV_URL       = "https://docs.google.com/document/d/141HRthqUsSmXq3aMjyDHlaMzlDMhus-b/export?format=pdf"; // baixa direto em PDF, sempre a versão mais atual do doc
   const LINKEDIN_URL = "https://www.linkedin.com/in/rafael-brondani-prestes-954b3a207/"; // ex.: https://www.linkedin.com/in/rafael-...
   const EMAIL        = "rbprestes@hotmail.com"; // ex.: rafaelbrondanip@gmail.com
 
