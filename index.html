@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rafael Brondani Prestes</title>
+  <meta name="description" content="Rafael Brondani Prestes — CS student @ PUCRS, ML research @ MALTA. 10 projects in 10 days." />
+  <meta name="color-scheme" content="dark light" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Rafael Brondani Prestes" />
+  <meta property="og:description" content="CS student @ PUCRS · ML research @ MALTA · 10 projects in 10 days." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Fonts: mono for the terminal soul, Inter for editorial readability -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- floating controls -->
+  <div class="controls" aria-hidden="false">
+    <button id="sound-toggle" class="ctl" type="button" title="Toggle ambient sound" aria-pressed="false" aria-label="Toggle ambient sound">♪</button>
+    <button id="theme-toggle" class="ctl" type="button" title="Toggle theme" aria-label="Toggle light/dark theme">☾</button>
+  </div>
+
+  <!-- cursor follower (JS-managed; hidden on touch / reduced-motion) -->
+  <div id="cursor-pet" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <a href="#top" class="brand">rafa<span class="accent">prests</span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#about">about</a>
+      <a href="#days">10&nbsp;days</a>
+      <a href="#contact">cv</a>
+      <a href="#contact">links</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section id="top" class="hero">
+      <p class="prompt"><span class="accent">rafael@pucrs</span>:<span class="path">~</span>$ whoami</p>
+      <h1 class="name">Rafael Brondani Prestes</h1>
+      <p class="tagline">
+        <span class="accent">&gt;</span> CS @ PUCRS <span class="dim">·</span> ML research @ MALTA
+        <span class="caret" aria-hidden="true">▮</span>
+      </p>
+      <p class="hero-sub">
+        Estudante de Ciência da Computação no último semestre, curioso por máquinas que
+        aprendem. Aqui: <strong>10 projetos em 10 dias</strong> — este site é o dia zero.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#days">ver o desafio</a>
+        <a class="btn" href="#contact">contato &amp; CV</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2 class="section-title"><span class="accent">$</span> cat about.md</h2>
+      <div class="about">
+        <p>
+          Oi, eu sou o Rafael. Estudo Ciência da Computação na <strong>PUCRS</strong> (último
+          semestre) e faço iniciação científica no <strong>MALTA</strong>, laboratório de
+          machine learning da universidade.
+        </p>
+        <p>
+          Gosto de construir coisas — de modelos que aprendem a pequenos sites com
+          personalidade. Ainda estou descobrindo em que quero me especializar, então prefiro
+          me apresentar como <em>estudante</em>: amplo o suficiente pra caber tudo que eu ainda
+          posso me tornar.
+        </p>
+      </div>
+    </section>
+
+    <!-- 10 DAYS -->
+    <section id="days" class="section">
+      <h2 class="section-title"><span class="accent">$</span> ls ./10-days</h2>
+      <p class="section-lead">
+        Um projeto por dia, do dia 0 ao dia 9. Cada um vive no seu próprio repositório.
+      </p>
+      <ol id="projects-grid" class="grid" aria-label="10 days of projects"></ol>
+    </section>
+
+    <!-- CONTACT / CV -->
+    <section id="contact" class="section">
+      <h2 class="section-title"><span class="accent">$</span> ./contact --links</h2>
+      <div class="contact">
+        <a class="link-card" id="cv-link" href="#" target="_blank" rel="noopener">
+          <span class="link-ico">⭳</span>
+          <span class="link-text"><strong>Download CV</strong><small>PDF (sempre atualizado)</small></span>
+        </a>
+        <a class="link-card" href="https://github.com/rafaprests" target="_blank" rel="noopener">
+          <span class="link-ico">⌥</span>
+          <span class="link-text"><strong>GitHub</strong><small>@rafaprests</small></span>
+        </a>
+        <a class="link-card" id="linkedin-link" href="#" target="_blank" rel="noopener">
+          <span class="link-ico">in</span>
+          <span class="link-text"><strong>LinkedIn</strong><small>vamos conversar</small></span>
+        </a>
+        <a class="link-card" id="email-link" href="#">
+          <span class="link-ico">@</span>
+          <span class="link-text"><strong>Email</strong><small>manda um oi</small></span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><span class="accent">rafael@pucrs</span>:~$ <span class="dim">exit</span> <span class="caret" aria-hidden="true">▮</span></p>
+    <p class="dim small">feito no dia 0 do desafio · <span id="year"></span> · psst — abra o console 👀</p>
+  </footer>
+
+  <audio id="ambient" loop preload="none">
+    <!-- placeholder: coloque sua trilha em assets/ambient.mp3 -->
+    <source src="assets/ambient.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="projects.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
