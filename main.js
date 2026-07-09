@@ -7,9 +7,9 @@
   /* -----------------------------------------------------------------------
    * CONFIG — placeholders para o Rafael preencher
    * --------------------------------------------------------------------- */
-  const CV_URL       = ""; // ex.: link de download do Google Drive
-  const LINKEDIN_URL = ""; // ex.: https://www.linkedin.com/in/rafael-...
-  const EMAIL        = ""; // ex.: rafaelbrondanip@gmail.com
+  const CV_URL       = "https://docs.google.com/document/d/141HRthqUsSmXq3aMjyDHlaMzlDMhus-b/edit?usp=sharing&ouid=114828948792713014646&rtpof=true&sd=true"; // ex.: link de download do Google Drive
+  const LINKEDIN_URL = "https://www.linkedin.com/in/rafael-brondani-prestes-954b3a207/"; // ex.: https://www.linkedin.com/in/rafael-...
+  const EMAIL        = "rbprestes@hotmail.com"; // ex.: rafaelbrondanip@gmail.com
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const isTouch = window.matchMedia("(hover: none)").matches;
