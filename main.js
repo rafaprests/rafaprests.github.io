@@ -11,8 +11,6 @@
   const LINKEDIN_URL = "https://www.linkedin.com/in/rafael-brondani-prestes-954b3a207/"; // ex.: https://www.linkedin.com/in/rafael-...
   const EMAIL        = "rbprestes@hotmail.com"; // ex.: rafaelbrondanip@gmail.com
 
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
   /* -----------------------------------------------------------------------
    * Links de contato (só ativa o que estiver preenchido)
    * --------------------------------------------------------------------- */
@@ -136,36 +134,14 @@
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   /* -----------------------------------------------------------------------
-   * Easter eggs
-   *  1) mensagem no console
-   *  2) konami code → "modo festa" (só um leve tremor/hue), respeita reduced-motion
+   * Um oi discreto no console pra quem for dev
    * --------------------------------------------------------------------- */
   console.log(
     "%c> hey, dev 👋",
     "font-family:monospace;font-size:16px;color:#7ee787;font-weight:700"
   );
   console.log(
-    "%crafael@pucrs:~$ você achou o console. digite o konami code na página ;)\n↑ ↑ ↓ ↓ ← → ← → B A",
+    "%crafael@pucrs:~$ obrigado por dar uma espiada. github.com/rafaprests",
     "font-family:monospace;color:#8b98a5"
   );
-
-  if (!prefersReducedMotion) {
-    const KONAMI = [
-      "ArrowUp","ArrowUp","ArrowDown","ArrowDown",
-      "ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a",
-    ];
-    let idx = 0;
-    window.addEventListener("keydown", (e) => {
-      const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
-      idx = key === KONAMI[idx] ? idx + 1 : (key === KONAMI[0] ? 1 : 0);
-      if (idx === KONAMI.length) {
-        idx = 0;
-        document.body.animate(
-          [{ filter: "hue-rotate(0deg)" }, { filter: "hue-rotate(360deg)" }],
-          { duration: 1400, iterations: 2 }
-        );
-        console.log("%c🎉 konami! bem-vindo ao clube.", "color:#ffca7a;font-family:monospace");
-      }
-    });
-  }
 })();
