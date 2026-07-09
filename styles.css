@@ -92,33 +92,11 @@ a { color: inherit; text-decoration: none; }
 .ctl:hover { transform: translateY(-2px); border-color: var(--accent); color: var(--accent); }
 .ctl[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); }
 
-/* ---------- cursor follower ---------- */
-#cursor-pet {
-  position: fixed; top: 0; left: 0; z-index: 40;
-  pointer-events: none;
-  opacity: 0;                 /* revealed by JS once it has a position */
-  transition: opacity .3s ease;
-  will-change: transform;
-}
-#dog-flip { display: block; }                    /* vira o cão na direção do movimento */
-#cursor-pet.right #dog-flip { transform: scaleX(-1); }
-#dog {
-  display: block; font-size: 28px; line-height: 1;
-  transform-origin: center bottom;
-  filter: drop-shadow(0 2px 3px rgba(0,0,0,.35));
-}
-#cursor-pet.run  #dog { animation: dog-run .3s ease-in-out infinite; }
-#cursor-pet.sleep #dog { animation: dog-sleep 2.4s ease-in-out infinite; }
+/* ---------- cursor follower (oneko) ---------- */
+/* O elemento #oneko é criado pelo próprio oneko.js; só garantimos o rendering. */
+#oneko { image-rendering: pixelated; }
 
 @keyframes blink { 50% { opacity: 0; } }
-@keyframes dog-run {
-  0%,100% { transform: translateY(0)   rotate(-5deg); }
-  50%     { transform: translateY(-4px) rotate(5deg); }
-}
-@keyframes dog-sleep {
-  0%,100% { transform: translateY(0); }
-  50%     { transform: translateY(-3px); }
-}
 
 /* ---------- layout ---------- */
 .topbar, main, .footer { position: relative; z-index: 1; }
@@ -248,7 +226,7 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  #cursor-pet { display: none !important; }
+  #oneko { display: none !important; }
 }
 
 /* respect users focusing via keyboard */

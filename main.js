@@ -12,7 +12,6 @@
   const EMAIL        = "rbprestes@hotmail.com"; // ex.: rafaelbrondanip@gmail.com
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const isTouch = window.matchMedia("(hover: none)").matches;
 
   /* -----------------------------------------------------------------------
    * Links de contato (só ativa o que estiver preenchido)
@@ -128,51 +127,7 @@
   soundBtn && soundBtn.addEventListener("click", () => { soundOn = !soundOn; applySound(); });
   syncSound(); // não auto-toca no load (política de autoplay); espera 1 clique
 
-  /* -----------------------------------------------------------------------
-   * Cachorrinho que corre atrás do cursor (estilo oneko)
-   * Corre até perto do mouse; parado, senta e dorme 😴.
-   * Só em dispositivos com hover e sem reduced-motion.
-   * --------------------------------------------------------------------- */
-  if (!isTouch && !prefersReducedMotion) {
-    const pet = document.getElementById("cursor-pet");
-    const dog = document.getElementById("dog");
-    if (pet && dog) {
-      const SPEED = 12;        // px por tick
-      const NEAR = 42;         // distância em que ele "chega" e para (trailing)
-      const SLEEP_AFTER = 16;  // ticks parado antes de dormir (~1.5s)
-
-      let petX = window.innerWidth / 2, petY = window.innerHeight / 2;
-      let mx = petX, my = petY, shown = false, idle = 0, asleep = false;
-
-      window.addEventListener("mousemove", (e) => {
-        mx = e.clientX; my = e.clientY;
-        if (!shown) { shown = true; pet.style.opacity = "1"; }
-      }, { passive: true });
-
-      setInterval(() => {
-        const dx = mx - petX, dy = my - petY;
-        const dist = Math.hypot(dx, dy);
-
-        if (dist < NEAR) {
-          // chegou → fica parado; depois de um tempo, dorme
-          pet.classList.remove("run");
-          idle++;
-          if (idle > SLEEP_AFTER && !asleep) {
-            asleep = true; dog.textContent = "😴"; pet.classList.add("sleep");
-          }
-        } else {
-          // acorda e corre atrás do mouse
-          if (asleep) { asleep = false; dog.textContent = "🐕"; pet.classList.remove("sleep"); }
-          idle = 0;
-          pet.classList.add("run");
-          pet.classList.toggle("right", dx > 0);   // vira pra direção do movimento
-          petX += (dx / dist) * SPEED;
-          petY += (dy / dist) * SPEED;
-        }
-        pet.style.transform = `translate(${petX}px, ${petY}px) translate(-50%, -50%)`;
-      }, 90);
-    }
-  }
+  /* O gatinho que persegue o cursor é o oneko — carregado via oneko.js. */
 
   /* -----------------------------------------------------------------------
    * Ano no rodapé
