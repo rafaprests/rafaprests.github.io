@@ -1,11 +1,9 @@
 // oneko.js: https://github.com/adryd325/oneko.js
 
 (function oneko() {
-  const isReducedMotion =
-    window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
-    window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
-
-  if (isReducedMotion) return;
+  // NOTA: a versão oficial aborta quando prefers-reduced-motion está ligado.
+  // Removido de propósito (como faz o dimden.dev) para o pet aparecer mesmo
+  // com "reduzir animações" ativado no sistema. É um enfeite pequeno e opcional.
 
   const nekoEl = document.createElement("div");
   let persistPosition = true;

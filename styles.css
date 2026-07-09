@@ -223,10 +223,11 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
 }
 
 /* ---------- accessibility: reduced motion ---------- */
+/* O pet (oneko) é movido por JS, não por CSS, então continua funcionando aqui —
+   é intencional, pois o dono do site quer o cachorrinho sempre visível. */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  #oneko { display: none !important; }
 }
 
 /* respect users focusing via keyboard */
