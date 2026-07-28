@@ -16,8 +16,26 @@ const PROJECTS = [
     repo: "https://github.com/rafaprests/rafaprests.github.io",
     demo: "https://rafaprests.github.io",
   },
-  { day: 1, title: "", blurb: "", status: "soon", tags: [], repo: "", demo: "" },
-  { day: 2, title: "", blurb: "", status: "soon", tags: [], repo: "", demo: "" },
+  {
+    day: 1,
+    title: "Assistente de compras",
+    blurb:
+      "App mobile: fotografa a despensa, a IA identifica os itens por visão computacional e mantém o inventário. Cadastra receitas e cruza com o que tem em casa pra gerar a lista de compras.",
+    status: "done",
+    tags: ["Expo", "React Native", "Node", "OpenAI API"],
+    repo: "",
+    demo: "",
+  },
+  {
+    day: 2,
+    title: "Forja",
+    blurb:
+      "Gerador de jogos de cartas 1x1 por IA: você descreve um tema, a IA compõe duas facções dentro de uma engine fixa (ela não inventa regra nova, só combina peças conhecidas). Joga no navegador ou imprime pra jogar no papel.",
+    status: "done",
+    tags: ["TypeScript", "React", "Node", "OpenAI API"],
+    repo: "",
+    demo: "",
+  },
   { day: 3, title: "", blurb: "", status: "soon", tags: [], repo: "", demo: "" },
   { day: 4, title: "", blurb: "", status: "soon", tags: [], repo: "", demo: "" },
   { day: 5, title: "", blurb: "", status: "soon", tags: [], repo: "", demo: "" },
