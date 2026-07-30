@@ -36,7 +36,16 @@ const PROJECTS = [
     repo: "",
     demo: "",
   },
-  { day: 3, title: "", blurb: "", status: "soon", tags: [], repo: "", demo: "" },
+  {
+    day: 3,
+    title: "Delícias da Barbs",
+    blurb:
+      "Cardápio digital por encomenda: a admin cadastra os doces com foto, descrição, preço e categoria; quem visita monta um carrinho, escolhe entrega ou retirada e fecha o pedido — sem pagamento online, é combinado por fora.",
+    status: "done",
+    tags: ["Node", "Express", "SQLite"],
+    repo: "",
+    demo: "",
+  },
   { day: 4, title: "", blurb: "", status: "soon", tags: [], repo: "", demo: "" },
   { day: 5, title: "", blurb: "", status: "soon", tags: [], repo: "", demo: "" },
   { day: 6, title: "", blurb: "", status: "soon", tags: [], repo: "", demo: "" },
