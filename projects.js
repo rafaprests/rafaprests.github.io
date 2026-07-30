@@ -44,7 +44,7 @@ const PROJECTS = [
     status: "done",
     tags: ["Node", "Express", "SQLite"],
     repo: "",
-    demo: "",
+    demo: "https://delicias-da-barbs.fly.dev",
   },
   { day: 4, title: "", blurb: "", status: "soon", tags: [], repo: "", demo: "" },
   { day: 5, title: "", blurb: "", status: "soon", tags: [], repo: "", demo: "" },
