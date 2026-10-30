@@ -1,6 +1,6 @@
 # rafaprests.github.io
 
-Meu site pessoal — cartão de visita + o diário do desafio **10 projetos em 10 dias** (dia 0).
+Meu site pessoal — cartão de visita + o TCC (busca de música por linguagem natural).
 
 Feito com HTML/CSS/JS puro, sem build. Servido pelo GitHub Pages.
 
@@ -13,7 +13,8 @@ python3 -m http.server 8000
 
 ## Editar
 
-- **Adicionar um projeto do desafio:** preencha o dia correspondente em [`projects.js`](projects.js).
+- **Link do estudo:** se o endereço do túnel na MotoZ mudar, troque as três ocorrências em
+  [`estudo/index.html`](estudo/index.html). O site inteiro aponta para `estudo/`.
 - **CV / LinkedIn / email:** preencha as constantes no topo de [`main.js`](main.js)
   (`CV_URL`, `LINKEDIN_URL`, `EMAIL`).
 - **Som ambiente (opcional):** coloque um arquivo em `assets/ambient.mp3`.
@@ -24,5 +25,5 @@ python3 -m http.server 8000
 |-----------------|------------------------------------------|
 | `index.html`    | conteúdo e seções                        |
 | `styles.css`    | tema (terminal × editorial) e layout     |
-| `main.js`       | render dos dias, tema, som, cursor, eggs |
-| `projects.js`   | os 10 dias (dados)                       |
+| `main.js`       | links, tema, som, contador de visitas    |
+| `estudo/`       | redireciona para o estudo do TCC         |

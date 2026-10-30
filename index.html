@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rafael Brondani Prestes</title>
-  <meta name="description" content="Rafael Brondani Prestes — CS student @ PUCRS, ML research @ MALTA. 10 projects in 10 days." />
+  <meta name="description" content="Rafael Brondani Prestes — CS student @ PUCRS, ML research @ MALTA. TCC: music search in natural language." />
   <meta name="color-scheme" content="dark light" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Rafael Brondani Prestes" />
-  <meta property="og:description" content="CS student @ PUCRS · ML research @ MALTA · 10 projects in 10 days." />
+  <meta property="og:description" content="CS student @ PUCRS · ML research @ MALTA · TCC: music search in natural language." />
   <meta property="og:type" content="website" />
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
@@ -37,7 +37,7 @@
     <nav class="nav" aria-label="Primary">
       <a href="#aboutme">aboutme</a>
       <a href="#tcc">tcc</a>
-      <a href="#days">10&nbsp;days</a>
+      <a href="estudo/">estudo</a>
       <a href="#contact">cv</a>
       <a href="#contact">links</a>
     </nav>
@@ -54,10 +54,11 @@
       </p>
       <p class="hero-sub">
         Estudante de Ciência da Computação no último semestre, curioso por máquinas que
-        aprendem. Aqui: <strong>10 projetos em 10 dias</strong> — este site é o dia zero.
+        aprendem. No TCC: <strong>busca de música por linguagem natural</strong>.
       </p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="#days">ver o desafio</a>
+        <a class="btn btn-primary" href="estudo/">participar do estudo</a>
+        <a class="btn" href="#tcc">sobre o tcc</a>
         <a class="btn" href="#contact">contato &amp; CV</a>
       </div>
     </section>
@@ -89,28 +90,22 @@
     <section id="tcc" class="section">
       <h2 class="section-title"><span class="accent">$</span> cat tcc.md</h2>
       <p class="section-lead">
-        Trabalho de conclusão de curso — recomendação de música baseada em prompt.
+        Trabalho de conclusão de curso — busca de música por linguagem natural.
       </p>
       <div class="about">
         <p>
-          A ideia: descrever o que você quer ouvir em texto livre (<em>"algo melancólico pra
-          uma tarde de chuva"</em>) e receber uma seleção de faixas que combinam com aquilo.
+          A ideia: descrever o que você quer ouvir em texto livre (<em>"something melancholic
+          for a rainy afternoon"</em>) e receber uma seleção de faixas que combinam com aquilo.
         </p>
         <p>
-          <span class="badge wip">to be defined</span>
-          O escopo, a abordagem e o progresso vão aparecer aqui conforme o desenvolvimento —
-          esta seção é o diário do TCC.
+          <span class="badge done">estudo aberto</span>
+          Você escreve em inglês o que quer ouvir, recebe cinco listas de músicas e dá uma nota
+          de 1 a 5 a cada uma. Dá para ouvir um trecho de cada música antes de avaliar.
+        </p>
+        <p>
+          <a class="btn btn-primary" href="estudo/">participar do estudo →</a>
         </p>
       </div>
-    </section>
-
-    <!-- 10 DAYS -->
-    <section id="days" class="section">
-      <h2 class="section-title"><span class="accent">$</span> ls ./10-days</h2>
-      <p class="section-lead">
-        Um projeto por dia, do dia 0 ao dia 9. Cada um vive no seu próprio repositório.
-      </p>
-      <ol id="projects-grid" class="grid" aria-label="10 days of projects"></ol>
     </section>
 
     <!-- CONTACT / CV -->
@@ -143,7 +138,7 @@
       <span class="accent">visitantes</span>:
       <span id="hitcount" class="hitcount" title="visitas ao site">······</span>
     </p>
-    <p class="dim small">feito no dia 0 do desafio · <span id="year"></span></p>
+    <p class="dim small">rafaprests · <span id="year"></span></p>
   </footer>
 
   <audio id="ambient" loop preload="none">
@@ -151,7 +146,6 @@
     <source src="assets/ambient.mp3" type="audio/mpeg" />
   </audio>
 
-  <script src="projects.js"></script>
   <script src="main.js"></script>
   <!-- oneko: cachorrinho (Snoopy) que persegue o cursor. data-cat aponta pro sprite local. -->
   <script src="oneko.js" data-cat="assets/dog.png"></script>

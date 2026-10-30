@@ -151,23 +151,7 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
 .about p { margin: 0 0 16px; }
 .about strong { color: var(--text); }
 
-/* ---------- 10 days grid ---------- */
-.grid {
-  list-style: none; margin: 0; padding: 0;
-  display: grid; gap: 16px;
-  grid-template-columns: repeat(2, 1fr);
-}
-.card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 18px 18px 16px;
-  display: flex; flex-direction: column; gap: 10px; min-height: 150px;
-  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
-}
-.card:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--accent) 60%, var(--border)); box-shadow: var(--shadow); }
-.card.is-soon { opacity: .62; }
-
-.card-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-.card-day { font-family: var(--mono); font-size: .8rem; color: var(--text-dim); }
+/* ---------- badge (seção do tcc) ---------- */
 .badge {
   font-family: var(--mono); font-size: .68rem; text-transform: uppercase;
   letter-spacing: .06em; padding: 3px 8px; border-radius: 999px;
@@ -175,17 +159,6 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
 }
 .badge.done { color: var(--accent);   border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
 .badge.wip  { color: var(--accent-2); border-color: color-mix(in srgb, var(--accent-2) 45%, transparent); }
-
-.card-title { font-family: var(--mono); font-weight: 700; font-size: 1.05rem; margin: 0; }
-.card-title.muted { color: var(--text-dim); font-weight: 500; }
-.card-blurb { color: var(--text-dim); font-size: .92rem; margin: 0; flex: 1; }
-
-.tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.tag { font-family: var(--mono); font-size: .7rem; color: var(--text-dim); background: var(--bg-soft); border: 1px solid var(--border); padding: 2px 7px; border-radius: 6px; }
-
-.card-links { display: flex; gap: 14px; font-family: var(--mono); font-size: .82rem; }
-.card-links a { color: var(--accent); }
-.card-links a:hover { text-decoration: underline; }
 
 /* ---------- contact ---------- */
 .contact { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
@@ -222,7 +195,7 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
 @media (max-width: 640px) {
   body { font-size: 16px; }
   .nav { gap: 14px; }
-  .grid, .contact { grid-template-columns: 1fr; }
+  .contact { grid-template-columns: 1fr; }
   .topbar { padding: 18px; }
   main { padding: 0 18px; }
 }

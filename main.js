@@ -30,54 +30,6 @@
   wireLink("email-link", EMAIL ? "mailto:" + EMAIL : "");
 
   /* -----------------------------------------------------------------------
-   * Render dos 10 dias (a partir de PROJECTS em projects.js)
-   * --------------------------------------------------------------------- */
-  const STATUS = {
-    done: { label: "✓ done", cls: "done" },
-    wip:  { label: "in progress", cls: "wip" },
-    soon: { label: "soon", cls: "" },
-  };
-
-  function esc(s) {
-    return String(s).replace(/[&<>"']/g, (c) => (
-      { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]
-    ));
-  }
-
-  function renderProjects() {
-    const grid = document.getElementById("projects-grid");
-    if (!grid || typeof PROJECTS === "undefined") return;
-
-    grid.innerHTML = PROJECTS.map((p) => {
-      const st = STATUS[p.status] || STATUS.soon;
-      const isSoon = p.status === "soon";
-      const title = p.title || "por vir";
-
-      const tags = (p.tags || [])
-        .map((t) => `<span class="tag">${esc(t)}</span>`)
-        .join("");
-
-      const links = [
-        p.repo ? `<a href="${esc(p.repo)}" target="_blank" rel="noopener">repo ↗</a>` : "",
-        p.demo ? `<a href="${esc(p.demo)}" target="_blank" rel="noopener">demo ↗</a>` : "",
-      ].filter(Boolean).join("");
-
-      return `
-        <li class="card ${isSoon ? "is-soon" : ""}">
-          <div class="card-head">
-            <span class="card-day">day ${p.day}</span>
-            <span class="badge ${st.cls}">${st.label}</span>
-          </div>
-          <h3 class="card-title ${isSoon ? "muted" : ""}">${esc(title)}</h3>
-          ${p.blurb ? `<p class="card-blurb">${esc(p.blurb)}</p>` : `<p class="card-blurb">Aguardando o dia ${p.day}…</p>`}
-          ${tags ? `<div class="tags">${tags}</div>` : ""}
-          ${links ? `<div class="card-links">${links}</div>` : ""}
-        </li>`;
-    }).join("");
-  }
-  renderProjects();
-
-  /* -----------------------------------------------------------------------
    * Toggle de tema (persistido)
    * --------------------------------------------------------------------- */
   const root = document.documentElement;
